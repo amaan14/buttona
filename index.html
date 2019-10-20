@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<style>
+#footer {
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin:0;
+    width:15%;
+    height:20%;
+	background:url(ngu.jpg) no-repeat bottom right;
+    background-size:100%;
+}
+</style>
+<body style="background-color:#FDFF00;">
+<script type="text/javascript">
+
+var id = 0; //intervalid
+
+function func1 ( ) //function name
+{
+  if ( document.getElementById("buttona").value == "dabao!" )
+  {
+    // Start the timer
+    document.getElementById("buttona").value = "ruk aur buttona mat daba!";
+    id = setInterval ( "func2()", 1000 );
+  }
+  else
+  {
+    document.getElementById("msg").innerHTML = "";
+    document.getElementById("buttona").value = "dabao!";
+    clearInterval ( id );
+  }
+}
+
+function func2()
+{
+  if ( Math.random ( ) > .3 )
+  {
+    document.getElementById("msg").innerHTML = "Kelanche Phulanche";
+  
+/*	if{
+    document.getElementById("msg").innerHTML = "Fulanche";
+		}*/
+	}
+  else
+  {
+	document.getElementById("msg").innerHTML = "Dukaan!";
+  }
+  setTimeout ( 'document.getElementById("msg").innerHTML = ""', 400 );
+
+}
+
+</script>
+<center>
+<div id="msg" style="height: 1.5em; font-size: 2em; color: red;"></div><br>
+<input type="button" name="dabao" id="buttona" value="dabao!" onclick="func1()" />
+</center>
+<div id="footer"></div>
+</body>
+</html>
